@@ -1,31 +1,57 @@
 {
-  "name": "package-template",
+  "name": "wibu-event",
   "version": "0.0.1",
-  "main": "dist/src/index.js",
-  "types": "dist/types/src/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/types/index.d.ts",
   "license": "MIT",
-   "scripts": {
+  "scripts": {
     "build": "rm -rf dist && tsc",
-    "watch": "tsc --watch"
+    "dev": "tsc --watch"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "types": "./dist/types/index.d.ts"
+    },
+    "./client": {
+      "import": "./dist/client/index.js",
+      "require": "./dist/client/index.js",
+      "types": "./dist/types/client/index.d.ts"
+    },
+    "./server": {
+      "import": "./dist/server/index.js",
+      "require": "./dist/server/index.js",
+      "types": "./dist/types/server/index.d.ts"
+    }
   },
   "dependencies": {
+    "@hookstate/core": "^4.0.1",
+    "dotenv": "^16.4.5",
+    "firebase": "^10.12.5",
+    "firebase-admin": "^12.3.1",
+    "fs": "^0.0.1-security",
+    "js-base64": "^3.7.7",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
-     "@types/react": "^18.3.3",
+    "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/bipproduction/package-template.git"
+    "url": "https://github.com/bipproduction/wibu-event.git"
   },
   "keywords": [
     "template",
     "package",
-    "package-template"
+    "package-template",
+    "event",
+    "realtime",
+    "firebase"
   ],
   "author": "Makuro"
 }
