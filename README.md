@@ -60,6 +60,7 @@ event.onChange("qr", (val) => {
     console.log(val)
 })
 
+
 function setQr() {
     event.set("qr", "qr code")
 }
